@@ -12,7 +12,7 @@ For this challenge is /challenge/challenge, and you'll need to invoke it properl
 rozakk@DESKTOP-JPQGP4K:~$ ssh -i key hacker@dojo.pwn.college
 Connected!
 ```
-2. The shell is now connected to the dojo. I pass the command  `/challenge/challenge --giveflag`, bcz as per question its given that, you need to pass /challenge/challenge with a proper argument to get the flag.
+2. The shell is now connected to the dojo. I pass the command  `/challenge/challenge --giveflag`, bcz as per question its given that, you need to pass /challenge/challenge with a proper argument, which gave me the flag.
 ```bash
 hacker@man~learning-from-documentation:~$ /challenge/challenge --giveflag
 Correct argument! Here is your flag:
@@ -185,5 +185,6 @@ pwn.college{AEoI2M4Qmq_zUMF2xY9AV2oNn7E.QX0ETO0wCMxkjNzEzW}
 
 ## References
 -[pwn.college](https://pwn.college/linux-luminarium/man/) - Digesting Documentation resource pages.
+
 
 
