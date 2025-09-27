@@ -109,6 +109,52 @@ Correct usage! Your flag: pwn.college{s_Z01aMV2jOGYa-LO1KLRCeCT5X.QX1EDO0wCMxkjN
 # 5. Searching for Manuals 
 In this challenge, it hides the manpage for the challenge by randomizing its name. To figure out how to search for the right manpage, read the man page manpage by doing: man man!
 
+## My solution
+**Flag:** `pwn.college{4O-xmkm8iz9cR9EF0Gq0uGRjLIP.QX2EDO0wCMxkjNzEzW}`
+
+1. Connecting the wsl to the dojo
+```bash
+rozakk@DESKTOP-JPQGP4K:~$ ssh -i key hacker@dojo.pwn.college
+Connected!
+```
+2. First, I execute the `man man` command. I did a lot of trial and error in solving this question. First, we needed to find the manpage that contains the argumrnt to execute /challenge/challenge.
+a) I executed `man -l -Tdvi ./foo.1x.gz > ./foo.1x.dvi`,bcz its description contained "flag" , but it gave me errors 
+```bash
+hacker@man~searching-for-manuals:~$ man -l -Tdvi ./foo.1x.gz > ./foo.1x.dvi
+man: ./foo.1x.gz: No such file or directory
+```
+3. Then, I returned to man ( ) commands given in the man man page, and started doing trial and error with the commands until `man -K` worked 
+```bash
+hacker@man~searching-for-manuals:~$ man -l
+What manual page do you want?
+For example, try 'man man'.
+hacker@man~searching-for-manuals:~$ man -K
+What manual page do you want?
+For example, try 'man man'.
+hacker@man~searching-for-manuals:~$ man -k
+apropos what?
+hacker@man~searching-for-manuals:~$ man man
+hacker@man~searching-for-manuals:~$ man -k "/challenge/challenge"
+xmkmizcquj (1)       - print the flag!
+hacker@man~searching-for-manuals:~$ /challenge/challenge xmkmizcquj (1)
+bash: syntax error near unexpected token `('
+hacker@man~searching-for-manuals:~$ /challenge/challenge xmkmizcquj
+Incorrect usage! Please read the hidden challenge man page!
+hacker@man~searching-for-manuals:~$ man -K "/challenge/challenge"
+```
+4. From man -K "/challenge/challenge", I got the argument for executing /challenge/challenge. On executing it, the shell revealed the flag
+Description of man -K : --xmkmiz NUM
+              print the flag if NUM is 489
+```bash
+hacker@man~searching-for-manuals:~$ /challenge/challenge --xmkmiz 489
+Correct usage! Your flag: pwn.college{4O-xmkm8iz9cR9EF0Gq0uGRjLIP.QX2EDO0wCMxkjNzEzW}
+```
+
+## what I learned 
+1. To figure out how to search for the right manpage, read the man page manpage by doing: man man
+
+## References
+-[pwn.college](https://pwn.college/linux-luminarium/man/) - Digesting Documentation resource pages
 
 # 6. Helpful Programs 
 In this challenge, you will practice reading a program's documentation with --help.
@@ -185,6 +231,7 @@ pwn.college{AEoI2M4Qmq_zUMF2xY9AV2oNn7E.QX0ETO0wCMxkjNzEzW}
 
 ## References
 -[pwn.college](https://pwn.college/linux-luminarium/man/) - Digesting Documentation resource pages.
+
 
 
 
