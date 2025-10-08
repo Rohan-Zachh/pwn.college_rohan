@@ -64,7 +64,8 @@ This is just a heads-up. I don't have a great experience of solving CTFs prior t
 3. Then, we came across an idea that, why not try filter out the frequency, ie concentrate the frequency at a particular point, which resonates with the morse code, thus filtering out the background music and thus, we are able to decode the morse code.
 4. So, we found a website 'Morse Code Sound & Vibration Listener` ( link given in references ), where we are able to set the frequency at a particular point as well as decoding the morse code at the same time.
 5. We uploaded the audio file and made trial and error methods to try and figure out the frequency where morse code is being detected. We found out that it was getting detected at around 750 Hz, as shown in the figure 
-![alt text](<WhatsApp Image 2025-10-08 at 15.25.07_9afaff17.jpg>)
+<img width="1312" height="866" alt="citedal" src="https://github.com/user-attachments/assets/11a1829a-e73b-4d9a-8044-7e5e47ed3d7a" />
+
 6. As the citadel{ } bracket opened and closed, the morse code between that time frame was taken as the flag's value and which is the actual flag!!
 
 ## References 
@@ -83,6 +84,8 @@ This is just a heads-up. I don't have a great experience of solving CTFs prior t
 4. After making this small edit, save the file with a .mid extension instead of .wav. 
 5. Now, I opened FL Studio and opened the new MIDI file in it, in the Piano Roll, where the notes became letters or words.
 6. And these notes revealed the flag!!
-![alt text](<WhatsApp Image 2025-10-08 at 22.03.58_944fffbc.jpg>)
+![CTF](https://github.com/user-attachments/assets/f854e825-b9e0-4daa-9277-e456ce401fc5)
+
+
 
 
